@@ -1,0 +1,13 @@
+{
+    "name": "js.demos.roadtok8s.com",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "start": "node app.js",
+      "prod": "ENV=\"production\" node app.js"
+    },
+    "dependencies": {
+      "express": "~4.16.1"
+    }
+  }
+  
