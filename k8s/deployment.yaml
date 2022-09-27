@@ -1,20 +1,20 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment.js.demos.roadtok8s.com
-  namespace: default
+  name: js-demos-roadtok8s-com-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: deployment.js.demos.roadtok8s.com
+      app: js-demos-roadtok8s-com-deployment
   template:
     metadata:
       labels:
-        app: deployment.js.demos.roadtok8s.com
+        app: js-demos-roadtok8s-com-deployment
     spec:
       containers:
-        - name: container.js.demos.roadtok8s.com
+        - name: js-demos-roadtok8s-com-container
           image: roadtokubernetes/js.demo.roadtok8s.com:latest
           env:
             - name: PORT
