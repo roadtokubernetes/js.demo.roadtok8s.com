@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment.js.demos.roadtok8s.com
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment.js.demos.roadtok8s.com
+  template:
+    metadata:
+      labels:
+        app: deployment.js.demos.roadtok8s.com
+    spec:
+      containers:
+        - name: container.js.demos.roadtok8s.com
+          image: roadtokubernetes/js-demos-roadtok8s-com:latest
+          env:
+            - name: PORT
+              value: "3001"
+          ports:
+            - containerPort: 3001
