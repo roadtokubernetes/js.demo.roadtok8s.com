@@ -16,6 +16,7 @@ spec:
       containers:
         - name: js-demos-roadtok8s-com-container
           image: roadtokubernetes/js.demo.roadtok8s.com:latest
+          imagePullPolicy: Always
           env:
             - name: PORT
               value: "3001"
