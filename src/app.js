@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/sup', (req, res) => {
+    res.send('sup')
+  })
+  
+
 
 /**
  * Normalize a port into a number, string, or false.
