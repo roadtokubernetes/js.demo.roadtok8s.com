@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
 app.get('/sup', (req, res) => {
     res.send('sup')
   })
+
+  app.get('/demo', (req, res) => {
+    res.send('This is  a demo route')
+  })
   
 
 
