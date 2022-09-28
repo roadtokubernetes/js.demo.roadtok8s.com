@@ -4,9 +4,9 @@ kind: Deployment
 metadata:
   name: js-demos-roadtok8s-com-deployment
   annotations:
-    keel.sh/policy: all
+    keel.sh/policy: force
     keel.sh/trigger: poll
-    keel.sh/pollSchedule: "@every 5m"
+    keel.sh/pollSchedule: "@every 15m"
 spec:
   replicas: 3
   selector:
@@ -25,5 +25,18 @@ spec:
             - name: PORT
               value: "3001"
           ports:
-            - containerPort: 3001
+            - name: js-demo-port
+              containerPort: 3001
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: js-demo-port
+            failureThreshold: 1
+            periodSeconds: 10
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: js-demo-port
+            failureThreshold: 30
+            periodSeconds: 10
 
