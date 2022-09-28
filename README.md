@@ -5,9 +5,44 @@ This is a demo Express.js application for the Road to Kubernetes series. This re
 
 ----
 
-Deploy to Kubernetes
+## Deploy to Kubernetes
+
+### Create Deployment and Service
+Create a `deployment`:
+```
+kubectl apply -f https://raw.githubusercontent.com/roadtokubernetes/js.demo.roadtok8s.com/main/k8s/deployment.yaml --namespace=apps
+```
+
+Create a `service`:
+```
+kubectl apply -f https://raw.githubusercontent.com/roadtokubernetes/js.demo.roadtok8s.com/main/k8s/service.yaml --namespace=apps
+```
+
+
+Verify `deployment`:
 
 ```
-kubectl apply -f https://github.com/roadtokubernetes/js.demo.roadtok8s.com/tree/main/k8s -n apps
+kubectl get deployment js-demos-roadtok8s-com-deployment
 ```
-> Change `apps` to the namespace of your choosing. 
+
+Verify `service`:
+
+```
+kubectl get service js-demos-roadtok8s-com-service
+```
+
+Change `apps` to the namespace of your choosing. 
+
+
+
+### Remove Deployment and Service
+Delete the `deployment`:
+```
+kubectl delete -f https://raw.githubusercontent.com/roadtokubernetes/js.demo.roadtok8s.com/main/k8s/deployment.yaml --namespace=apps
+```
+
+Delete the `service`:
+```
+kubectl delete -f https://raw.githubusercontent.com/roadtokubernetes/js.demo.roadtok8s.com/main/k8s/service.yaml --namespace=apps
+```
+
