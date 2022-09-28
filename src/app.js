@@ -13,6 +13,10 @@ app.get('/demo', (req, res) => {
   res.send('This is  a demo route')
 })
 
+app.get('/healthz', (req, res) => {
+  res.send('Healthy!')
+})
+
 
 
 /**
